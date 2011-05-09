@@ -1,0 +1,4 @@
+#|
+$JSON
+{"YaVersion":"39","Source":"Form","Properties":{"$Name":"Screen1","$Type":"Form","$Version":"5","Uuid":"0","Title":"Numbers Station App","$Components":[{"$Name":"VerticalArrangement1","$Type":"VerticalArrangement","$Version":"1","Uuid":"483660029","Width":"-2","$Components":[{"$Name":"Label1","$Type":"Label","$Version":"2","Uuid":"-151286400","Text":"Numbers Station App","TextAlignment":"1","Width":"-2"},{"$Name":"HorizontalArrangement1","$Type":"HorizontalArrangement","$Version":"1","Uuid":"-904982582","Width":"-2","$Components":[{"$Name":"StartButton","$Type":"Button","$Version":"2","Uuid":"-1271062985","Text":"Start","Width":"-2"},{"$Name":"CloseButton","$Type":"Button","$Version":"2","Uuid":"-1187689468","Text":"Close","Width":"-2"}]}]},{"$Name":"TextToSpeech1","$Type":"TextToSpeech","$Version":"1","Uuid":"-1793977350"}]}}
+|#

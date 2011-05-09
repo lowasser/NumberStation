@@ -1,0 +1,62 @@
+#|
+$Source $Yail
+|#
+
+(define-form appinventor.ai_wasserman_louis.NumberStation.Screen1 Screen1)
+(require <com.google.youngandroid.runtime>)
+;;; Screen1
+(do-after-form-creation (set-and-coerce-property! Screen1 'Title "Numbers Station App" 'text)
+)
+;;; VerticalArrangement1
+(add-component Screen1 VerticalArrangement VerticalArrangement1 (set-and-coerce-property! VerticalArrangement1 'Width -2 'number)
+)
+;;; Label1
+(add-component VerticalArrangement1 Label Label1 (set-and-coerce-property! Label1 'Text "Numbers Station App" 'text)
+(set-and-coerce-property! Label1 'TextAlignment 1 'number)
+(set-and-coerce-property! Label1 'Width -2 'number)
+)
+;;; HorizontalArrangement1
+(add-component VerticalArrangement1 HorizontalArrangement HorizontalArrangement1 (set-and-coerce-property! HorizontalArrangement1 'Width -2 'number)
+)
+;;; StartButton
+(add-component HorizontalArrangement1 Button StartButton (set-and-coerce-property! StartButton 'Text "Start" 'text)
+(set-and-coerce-property! StartButton 'Width -2 'number)
+)
+(define-event StartButton Click()
+ (call-component-method 'TextToSpeech1 'Speak (list (call-yail-primitive string-append (list (call-yail-primitive random-integer (list 0 9)
+ '( number number)
+ "random integer")
+)
+ '( text)
+ "make text")
+)
+ '( text)
+)
+
+)
+;;; CloseButton
+(add-component HorizontalArrangement1 Button CloseButton (set-and-coerce-property! CloseButton 'Text "Close" 'text)
+(set-and-coerce-property! CloseButton 'Width -2 'number)
+)
+(define-event CloseButton Click()
+ (call-yail-primitive close-application (list)
+ '() "close application")
+
+)
+;;; TextToSpeech1
+(add-component Screen1 TextToSpeech TextToSpeech1 )
+(define-event TextToSpeech1 AfterSpeaking( result )
+ (call-component-method 'TextToSpeech1 'Speak (list (call-yail-primitive yail-list-pick-random (list (call-yail-primitive make-yail-list (list "alpha" "bravo" "charlie" "delta" "echo" "foxtrot" "golf" "hotel" "india" "juliet" "kilo" "lima" "mike" "november" "oscar" "papa" "quebec" "romeo" "sierra" "tango" "uniform" "victor" "whiskey" "x ray" "yankee" "zulu" "one" "two" "three" "four" "five" "six" "seven" "eight" "nine" "zero")
+ '( any any any any any any any any any any any any any any any any any any any any any any any any any any any any any any any any any any any any)
+ "make a list")
+)
+ '( list)
+ "pick random item")
+)
+ '( text)
+)
+
+)
+(init-runtime  #f)
+
+
